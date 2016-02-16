@@ -1,0 +1,23 @@
+a.boton
+  font-size: 1.5em
+  font-weight: 300
+  display: block
+  @include background(linear-gradient(2deg, rgba(0,0,0,0.25) 0, rgba(0,0,0,0.1) 40%, transparent 50%), white)
+  border-radius: 0.5em
+  box-shadow: 0px 4px 8px rgba(38,112,198,0.6)
+  transition: all 0.1s ease-in-out
+  line-height: 2.5rem
+  text-align: center
+  
+
+  &:hover
+    display: block
+    color: lighten($text-color,100)
+    box-shadow: 0px 2px 4px rgba(38,112,198,0.6)
+    // box-shadow: 0px 0px 0 2px lighten($secundary-color,20)
+    background-color: invert($secundary-color)
+
+  &.boton--small
+    margin: auto
+    width: 150px
+    text-align: center

@@ -1,0 +1,28 @@
+mixin curso(enlace, txt)
+	li.curso
+		img(src="assets/img/curso-#{enlace}.png", alt="#{txt} inforcap")
+		a(href="#{enlace}") #{txt}
+
+section.cursos
+	h2.title-resaltado Cursos Disponibles
+	ul.cont-cursos
+		+curso(
+		'panaderia',
+		'Panadería'
+		)
+		+curso(
+		'reposteria',
+		'Repostería'
+		)
+		+curso(
+		'heladeria',
+		'Heladería'
+		)
+		+curso(
+		'confiteria',
+		'Confitería'
+		)
+		+curso(
+		'pasteleria',
+		'Pastelería'
+		)

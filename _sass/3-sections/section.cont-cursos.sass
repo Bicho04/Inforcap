@@ -1,0 +1,62 @@
+section.cont-cursos
+	background-color: #fff
+	position: relative
+	top: -1.2em
+	article.curso-panaderia
+		@include display(flex)
+		.panadria-txt
+			padding: 3em 0 0 4em
+			width: 40%
+			min-width: 550px
+			h2
+				font-size: 1.5em
+				margin-bottom: 0
+			strong
+				color: $primary-color
+				font-weight: 400
+				margin-bottom: 4em
+				display: block
+			h4
+				color: $text-color
+				margin-bottom: 0
+			p 
+				margin: 0
+		figure.panadria-galeria
+			width: 60%
+			margin: 1.2em 0 0
+			display: block
+			position: relative
+			.curso-img
+				display: inline-block
+				padding-top: 400px
+				&.grande
+					top: 0
+					left: 0
+					position: absolute
+					width: 100%
+					height: 400px
+					padding-top: 0
+					overflow: hidden
+					img 
+						width: 100%
+		.action
+			display: block
+			margin-top: 2em
+			strong
+				font-weight: 400
+				color: $primary-color
+				display: block
+			a.boton
+				padding: 0.5em 3em
+				border-radius: 0.3em
+				@include background(linear-gradient(rgb(255,28,36), rgb(170,0,0)) bottom no-repeat)
+				color: #fff
+				margin: 1em 0
+				font-size: 0.9em
+				display: inline-block
+
+				&:hover
+					@include background(linear-gradient( darken(rgb(255,28,36), 10), darken(rgb(170,0,0), 10)) bottom no-repeat)
+
+
+	

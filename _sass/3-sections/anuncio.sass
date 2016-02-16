@@ -1,0 +1,42 @@
+section.anuncio
+	height: 12em
+	background:
+		color: purple
+		image: url(../img/bg-footer.jpg)
+		repeat: no-repeat
+		size: 100%
+	.anuncio-bg
+		width: 100%
+		height: 12em
+		background-color: rgba(109,61,3,0.7)
+		position: absolute
+		// @include filter(grayscale(30%)sepia(60%)saturate(100%))
+	.cont-anuncio
+		position: relative
+		z-index: 1
+		@include filter(unset)
+		max-width: 1024px
+		margin: 0 auto
+		height: 100%
+		@include display(flex)	
+		@include justify-content(flex-start)	
+		@include align-items(center)	
+		.anucnio-logo
+			height: 12em
+			@include align-items(center)	
+			@include display(flex)	
+			background-color: #fff
+		p.anuncio-txt
+			margin-left: 1em
+			margin-right: 1em
+			font-weight: 400
+			font-size: 1.8em
+			width: 350px
+			line-height: 1.2em
+			color: #fff
+		a.anuncio-btn
+			padding: 0.5em 1em
+			border-radius: 0.3em
+			@include background(linear-gradient(rgb(255,28,36), rgb(170,0,0)) bottom no-repeat)
+			color: #fff
+			font-size: 1.8em

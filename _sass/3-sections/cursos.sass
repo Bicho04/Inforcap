@@ -1,0 +1,75 @@
+section.cursos
+ margin-bottom: 5em
+	h2.title-resaltado
+		text-align: center
+		font-size: 1.8em
+		font-weight: 900
+		margin: 2em auto 2em
+		text-transform: uppercase
+		&:after,
+		&:before
+			content: ''
+			background:
+				color: transparent 
+				image: url(../img/trigo.png)
+				position: 0 0
+				size: 100%
+				repeat: no-repeat
+			width: 2.8em
+			margin-right: 0.5em
+			height: 0.8em
+			display: inline-block
+		&:after
+			margin-left: 0.5em
+			transform: rotate(180deg)
+
+	ul.cont-cursos
+		margin: 0
+		padding: 0
+		list-style: none
+		@include display(flex)
+		@include justify-content(space-around)
+		@include align-items(center)
+
+		li.curso
+			@include display(flex)
+			@include flex-direction(column)
+			@include align-items(center)
+			position: relative
+			border-left: 2px solid #fff
+			border-right: 2px solid #fff
+			padding: 0 2em
+			width: 20%
+			height: 12em
+
+			img 
+				background-color: $secundary-color
+				width: 7em
+
+			a 
+				font-weight: 700
+				font-size: 1.8em
+				color: $secundary-color
+
+			&:after
+				background:
+					color: transparent
+					image: url(../img/rayos.png)
+					position: 0 0
+					repeat: no-repeat
+					size: 100% 200%
+				bottom: 0
+				left: 50%
+				margin-left: -80px
+				content: ''
+				height: 50px
+				margin-top: 0.2em
+				position: absolute
+				width: 160px
+
+			&:hover img
+				background-color: $primary-color
+			&:hover a
+				color: $primary-color
+			&:hover:after
+				background-position: 0 100%

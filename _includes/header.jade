@@ -1,0 +1,38 @@
+mixin menu-boton(enlace, txt)
+	li.header-navLink
+		a(href='#{enlace}') #{txt}
+
+header.header
+	nav(role='navigation')
+		ul.header-nav
+			
+			+menu-boton(
+			'javascript:void(0)',
+			'Infocap')
+			+menu-boton(
+			'javascript:void(0)',
+			'Formación')
+			+menu-boton(
+			'javascript:void(0)',
+			'Cursos')
+			+menu-boton(
+			'javascript:void(0)',
+			'Inscripciones')
+
+			li.header-navLink.logo
+				a.logo(href='javascript:void(0)')
+					img(src='assets/img/logo-infocap.jpg')
+
+			+menu-boton(
+			'javascript:void(0)',
+			'Calendario')
+			+menu-boton(
+			'javascript:void(0)',
+			'Eventos')
+			+menu-boton(
+			'javascript:void(0)',
+			'Testimonios')
+			+menu-boton(
+			'javascript:void(0)',
+			'Donaciones')
+					

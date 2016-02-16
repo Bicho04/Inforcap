@@ -1,0 +1,48 @@
+header.header
+	nav
+		position: relative
+		background: url(../img/bg-madera.jpg) 0 0 repeat
+		margin: auto
+		min-height: 3em
+		padding-top: 3.75em
+		width: 100%
+		z-index: 9999
+
+		ul.header-nav
+			@include display(flex)
+			@include justify-content(space-around)
+			@include align-items(center)
+			background-color: $primary-color
+			color: $terciary-color
+			height: 3em
+			list-style: none
+			margin: 0
+			padding: 0 0.5em
+			
+
+			li.header-navLink
+				a
+					padding: 0 1.5em
+					border-left: 1px solid #fff
+					color: $terciary-color
+					&:hover
+						color: lighten($primary-color,40)
+				&:first-child a
+					border: none
+				&:nth-child(6) a
+					border: none
+				&.logo
+					position: relative
+					bottom: 0.5em
+					height: 10.5em
+					background-color: #fff
+					padding: 1.5em 0.5em
+					border-radius: 0 0 3em 3em
+					a 
+						padding: 0
+					img 
+						margin: 0
+						padding: 0
+					a 
+						border: none 
+
