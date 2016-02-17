@@ -1,23 +1,26 @@
 mixin menu-boton(enlace, txt)
 	li.header-navLink
-		a(href='#{enlace}') #{txt}
+		a(href='#{enlace}.html') #{txt}
 
 header.header
 	nav(role='navigation')
 		ul.header-nav
 			
 			+menu-boton(
-			'javascript:void(0)',
-			'Infocap')
+			'index',
+			'Inforcap')
+
+			li.header-navLink
+				a(href='#') Formación
+				ul.header-sub-nav
+					li: a(href='#') Cursos
+					li: a(href='#') Especializaciones
+					li: a(href='#') Inscripciones
+					li: a(href='#') Calendario
+
 			+menu-boton(
 			'javascript:void(0)',
-			'Formación')
-			+menu-boton(
-			'javascript:void(0)',
-			'Cursos')
-			+menu-boton(
-			'javascript:void(0)',
-			'Inscripciones')
+			'Eventos')
 
 			li.header-navLink.logo
 				a.logo(href='javascript:void(0)')
@@ -25,14 +28,12 @@ header.header
 
 			+menu-boton(
 			'javascript:void(0)',
-			'Calendario')
-			+menu-boton(
-			'javascript:void(0)',
-			'Eventos')
-			+menu-boton(
-			'javascript:void(0)',
 			'Testimonios')
+
 			+menu-boton(
 			'javascript:void(0)',
-			'Donaciones')
-					
+			'RSE')
+
+			+menu-boton(
+			'javascript:void(0)',
+			'Contactos')					

@@ -4,18 +4,14 @@ section.anuncio
 		color: purple
 		image: url(../img/bg-footer.jpg)
 		repeat: no-repeat
-		size: 100%
-	.anuncio-bg
-		width: 100%
-		height: 12em
-		background-color: rgba(109,61,3,0.7)
-		position: absolute
-		// @include filter(grayscale(30%)sepia(60%)saturate(100%))
+		size: 100% 100%
+	box-shadow: 0 0.3em 0.8em -0.2em #000
+	
 	.cont-anuncio
 		position: relative
 		z-index: 1
 		@include filter(unset)
-		max-width: 1024px
+		max-width: 900px
 		margin: 0 auto
 		height: 100%
 		@include display(flex)	
@@ -26,6 +22,7 @@ section.anuncio
 			@include align-items(center)	
 			@include display(flex)	
 			background-color: #fff
+			opacity: 0.8
 		p.anuncio-txt
 			margin-left: 1em
 			margin-right: 1em

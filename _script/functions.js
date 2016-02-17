@@ -6,7 +6,13 @@ $(function(){
         center: true,
         loop: true,
         margin: 0,
-        nav: false,
+        nav: true,
+        dots: false,
+        navText: [ '<', '>' ],
         items: 1
+    });
+    $("#galeriaCursos").responsiveSlides({
+        manualControls: '#galeriaCursos-pager',
+        speed: 500
     });
 });

@@ -22,17 +22,22 @@ section.cont-cursos
 			p Llenar la solicitud correspondiente.
 			p Firmar el reglamento administrativo y académico.
 
-		figure.panadria-galeria
-			.curso-img.grande
-				img(src="http://lorempixel.com/133/133/nature", alt="")
-			.curso-img
-				img(src="http://lorempixel.com/133/133/nature", alt="")
-			.curso-img
-				img(src="http://lorempixel.com/270/133/food", alt="")
-			.curso-img
-				img(src="http://lorempixel.com/133/133/nature", alt="")
-			.curso-img
-				img(src="http://lorempixel.com/270/133/nature", alt="")
+		section.cursos-galeria
+			ul.rslides.imagenesGrandes(id='galeriaCursos')
+				li: img(src='http://loremflickr.com/500/300/bakery?random=1', alt='')
+				li: img(src='http://loremflickr.com/500/300/bakery?random=2', alt='')
+				li: img(src='http://loremflickr.com/500/300/bakery?random=3', alt='')
+				li: img(src='http://loremflickr.com/500/300/bakery?random=4', alt='')
+			ul.imagenesPeques(id='galeriaCursos-pager')
+				li
+					a(href='#'): img(src='http://loremflickr.com/500/300/bakery?random=1', alt='')
+				li
+					a(href='#'): img(src='http://loremflickr.com/500/300/bakery?random=2', alt='')
+				li
+					a(href='#'): img(src='http://loremflickr.com/500/300/bakery?random=3', alt='')
+				li
+					a(href='#'): img(src='http://loremflickr.com/500/300/bakery?random=4', alt='')
+
 			article.action
 				strong Elige tu carrera, elige tu mejor futuro
 				a.boton(href="#") Inscríbete ahora

@@ -243,7 +243,6 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -384,8 +383,6 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box;
 }
@@ -518,12 +515,20 @@ a:hover, a:focus {
   color: #e06661;
 }
 
+::-moz-selection {
+  background: ivert(#B72A24);
+}
+
 ::selection {
   background: ivert(#B72A24);
 }
 
 ::-moz-selection {
   background: ivert(#B72A24);
+}
+
+img::-moz-selection {
+  background: transparent;
 }
 
 img::selection {
@@ -583,10 +588,6 @@ body {
  * 	Owl Carousel - Auto Height Plugin
  */
 .owl-height {
-  -webkit-transition: height 500ms ease-in-out;
-  -moz-transition: height 500ms ease-in-out;
-  -ms-transition: height 500ms ease-in-out;
-  -o-transition: height 500ms ease-in-out;
   transition: height 500ms ease-in-out;
 }
 
@@ -629,7 +630,6 @@ body {
   cursor: pointer;
   cursor: hand;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -704,15 +704,12 @@ body {
  */
 .owl-carousel .owl-item .owl-lazy {
   opacity: 0;
-  -webkit-transition: opacity 400ms ease;
-  -moz-transition: opacity 400ms ease;
-  -ms-transition: opacity 400ms ease;
-  -o-transition: opacity 400ms ease;
   transition: opacity 400ms ease;
 }
 
 .owl-carousel .owl-item img {
-  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 /* 
@@ -736,18 +733,10 @@ body {
   cursor: pointer;
   z-index: 1;
   -webkit-backface-visibility: hidden;
-  -webkit-transition: scale 100ms ease;
-  -moz-transition: scale 100ms ease;
-  -ms-transition: scale 100ms ease;
-  -o-transition: scale 100ms ease;
   transition: scale 100ms ease;
 }
 
 .owl-carousel .owl-video-play-icon:hover {
-  -webkit-transition: scale(1.3, 1.3);
-  -moz-transition: scale(1.3, 1.3);
-  -ms-transition: scale(1.3, 1.3);
-  -o-transition: scale(1.3, 1.3);
   transition: scale(1.3, 1.3);
 }
 
@@ -761,14 +750,7 @@ body {
   height: 100%;
   background-position: center center;
   background-repeat: no-repeat;
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
   background-size: contain;
-  -webkit-transition: opacity 400ms ease;
-  -moz-transition: opacity 400ms ease;
-  -ms-transition: opacity 400ms ease;
-  -o-transition: opacity 400ms ease;
   transition: opacity 400ms ease;
 }
 
@@ -813,14 +795,49 @@ body {
   background: #ccc;
 }
 
+/*! http://responsiveslides.com v1.54 by @viljamis */
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+}
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+}
+
 header.header nav {
   position: relative;
   background: url(../img/bg-madera.jpg) 0 0 repeat;
+  background-size: 50% 4em;
   margin: auto;
   min-height: 3em;
-  padding-top: 3.75em;
+  padding-top: 4em;
   width: 100%;
   z-index: 9999;
+  color: #FFF;
 }
 
 header.header nav ul.header-nav {
@@ -831,8 +848,6 @@ header.header nav ul.header-nav {
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: distribute;
-  -moz-box-pack: distribute;
   box-pack: distribute;
   -webkit-justify-content: space-around;
   -moz-justify-content: space-around;
@@ -840,8 +855,6 @@ header.header nav ul.header-nav {
   -o-justify-content: space-around;
   justify-content: space-around;
   -ms-flex-pack: distribute;
-  -webkit-box-align: center;
-  -moz-box-align: center;
   box-align: center;
   -webkit-align-items: center;
   -moz-align-items: center;
@@ -851,10 +864,14 @@ header.header nav ul.header-nav {
   -ms-flex-align: center;
   background-color: #B72A24;
   color: #EDE9DE;
-  height: 3em;
+  height: 2.5em;
   list-style: none;
   margin: 0;
   padding: 0 0.5em;
+}
+
+header.header nav ul.header-nav li.header-navLink {
+  position: relative;
 }
 
 header.header nav ul.header-nav li.header-navLink a {
@@ -871,8 +888,41 @@ header.header nav ul.header-nav li.header-navLink:first-child a {
   border: none;
 }
 
-header.header nav ul.header-nav li.header-navLink:nth-child(6) a {
+header.header nav ul.header-nav li.header-navLink:nth-child(4) a {
   border: none;
+}
+
+header.header nav ul.header-nav li.header-navLink:nth-child(5) a {
+  border: none;
+}
+
+header.header nav ul.header-nav li.header-navLink > ul {
+  position: absolute;
+  top: 100%;
+  background-color: rgba(183, 42, 36, 0.75);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+header.header nav ul.header-nav li.header-navLink > ul > li {
+  margin: 0;
+}
+
+header.header nav ul.header-nav li.header-navLink > ul > li a {
+  border: none;
+  line-height: 3em;
+  display: block;
+}
+
+header.header nav ul.header-nav li.header-navLink > ul > li a:hover {
+  color: #fff;
+  background-color: rgba(183, 42, 36, 0.75);
+}
+
+header.header nav ul.header-nav li.header-navLink:hover > ul {
+  display: block;
 }
 
 header.header nav ul.header-nav li.header-navLink.logo {
@@ -882,6 +932,7 @@ header.header nav ul.header-nav li.header-navLink.logo {
   background-color: #fff;
   padding: 1.5em 0.5em;
   border-radius: 0 0 3em 3em;
+  box-shadow: 0 0.6em 1.4em -0.2em #000;
 }
 
 header.header nav ul.header-nav li.header-navLink.logo a {
@@ -898,8 +949,6 @@ header.header nav ul.header-nav li.header-navLink.logo a {
 }
 
 section.slider {
-  height: 31.2em;
-  overflow: hidden;
   margin-bottom: em;
   border-bottom: 5px solid #B72A24;
 }
@@ -908,6 +957,28 @@ section.slider ul.pictures {
   list-style: none;
   margin: 0 auto;
   padding: 0;
+  position: relative;
+}
+
+section.slider ul.pictures .owl-controls .owl-nav {
+  color: #fff;
+  width: 100%;
+}
+
+section.slider ul.pictures .owl-controls .owl-nav .owl-next, section.slider ul.pictures .owl-controls .owl-nav .owl-prev {
+  font-size: 2.8em;
+  margin: 0 0.5em;
+  font-weight: 900;
+  position: absolute;
+  width: 1em;
+  left: 0;
+  top: 40%;
+}
+
+section.slider ul.pictures .owl-controls .owl-nav .owl-next {
+  left: auto;
+  text-align: right;
+  right: 0;
 }
 
 section.slider ul.pictures li.picture {
@@ -916,22 +987,43 @@ section.slider ul.pictures li.picture {
 }
 
 section.slider ul.pictures li.picture .picture-txt {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  box-align: flex-star;
+  -webkit-align-items: flex-star;
+  -moz-align-items: flex-star;
+  -ms-align-items: flex-star;
+  -o-align-items: flex-star;
+  align-items: flex-star;
+  -ms-flex-align: flex-star;
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 30%;
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
-  padding: 1em;
+  padding: 0;
   margin: 0;
 }
 
 section.slider ul.pictures li.picture .picture-txt p {
-  max-width: 800px;
-  padding: 1em;
+  width: 800px;
+  max-width: 90%;
   margin: auto;
-  font-size: 1.7em;
-  font-weight: 300;
+  font-size: 1.8em;
+  font-weight: 600;
   line-height: 1.5em;
 }
 
@@ -962,7 +1054,9 @@ section.cursos h2.title-resaltado:after, section.cursos h2.title-resaltado:befor
 
 section.cursos h2.title-resaltado:after {
   margin-left: 0.5em;
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 section.cursos ul.cont-cursos {
@@ -976,8 +1070,6 @@ section.cursos ul.cont-cursos {
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: distribute;
-  -moz-box-pack: distribute;
   box-pack: distribute;
   -webkit-justify-content: space-around;
   -moz-justify-content: space-around;
@@ -985,8 +1077,6 @@ section.cursos ul.cont-cursos {
   -o-justify-content: space-around;
   justify-content: space-around;
   -ms-flex-pack: distribute;
-  -webkit-box-align: center;
-  -moz-box-align: center;
   box-align: center;
   -webkit-align-items: center;
   -moz-align-items: center;
@@ -1004,18 +1094,12 @@ section.cursos ul.cont-cursos li.curso {
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
   box-orient: vertical;
-  -webkit-box-direction: normal;
-  -moz-box-direction: normal;
   box-direction: normal;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-align: center;
-  -moz-box-align: center;
   box-align: center;
   -webkit-align-items: center;
   -moz-align-items: center;
@@ -1024,8 +1108,8 @@ section.cursos ul.cont-cursos li.curso {
   align-items: center;
   -ms-flex-align: center;
   position: relative;
-  border-left: 2px solid #fff;
-  border-right: 2px solid #fff;
+  border-left: 2px solid #eee;
+  border-right: 2px solid #eee;
   padding: 0 2em;
   width: 20%;
   height: 12em;
@@ -1034,6 +1118,7 @@ section.cursos ul.cont-cursos li.curso {
 section.cursos ul.cont-cursos li.curso img {
   background-color: #603813;
   width: 7em;
+  height: 7em;
 }
 
 section.cursos ul.cont-cursos li.curso a {
@@ -1075,14 +1160,8 @@ section.anuncio {
   background-color: purple;
   background-image: url(../img/bg-footer.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
-}
-
-section.anuncio .anuncio-bg {
-  width: 100%;
-  height: 12em;
-  background-color: rgba(109, 61, 3, 0.7);
-  position: absolute;
+  background-size: 100% 100%;
+  box-shadow: 0 0.3em 0.8em -0.2em #000;
 }
 
 section.anuncio .cont-anuncio {
@@ -1090,7 +1169,7 @@ section.anuncio .cont-anuncio {
   z-index: 1;
   -webkit-filter: unset;
   filter: unset;
-  max-width: 1024px;
+  max-width: 900px;
   margin: 0 auto;
   height: 100%;
   display: -webkit-box;
@@ -1100,8 +1179,6 @@ section.anuncio .cont-anuncio {
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-  -moz-box-pack: start;
   box-pack: start;
   -webkit-justify-content: flex-start;
   -moz-justify-content: flex-start;
@@ -1109,8 +1186,6 @@ section.anuncio .cont-anuncio {
   -o-justify-content: flex-start;
   justify-content: flex-start;
   -ms-flex-pack: start;
-  -webkit-box-align: center;
-  -moz-box-align: center;
   box-align: center;
   -webkit-align-items: center;
   -moz-align-items: center;
@@ -1122,8 +1197,6 @@ section.anuncio .cont-anuncio {
 
 section.anuncio .cont-anuncio .anucnio-logo {
   height: 12em;
-  -webkit-box-align: center;
-  -moz-box-align: center;
   box-align: center;
   -webkit-align-items: center;
   -moz-align-items: center;
@@ -1139,6 +1212,7 @@ section.anuncio .cont-anuncio .anucnio-logo {
   display: -ms-flexbox;
   display: flex;
   background-color: #fff;
+  opacity: 0.8;
 }
 
 section.anuncio .cont-anuncio p.anuncio-txt {
@@ -1154,7 +1228,6 @@ section.anuncio .cont-anuncio p.anuncio-txt {
 section.anuncio .cont-anuncio a.anuncio-btn {
   padding: 0.5em 1em;
   border-radius: 0.3em;
-  background: -webkit-linear-gradient(#ff1c24, #aa0000);
   background: linear-gradient(#ff1c24, #aa0000);
   color: #fff;
   font-size: 1.8em;
@@ -1163,7 +1236,7 @@ section.anuncio .cont-anuncio a.anuncio-btn {
 section.cont-cursos {
   background-color: #fff;
   position: relative;
-  top: -1.2em;
+  padding-bottom: 3em;
 }
 
 section.cont-cursos article.curso-panaderia {
@@ -1177,13 +1250,13 @@ section.cont-cursos article.curso-panaderia {
 }
 
 section.cont-cursos article.curso-panaderia .panadria-txt {
-  padding: 3em 0 0 4em;
-  width: 40%;
-  min-width: 550px;
+  padding: 3em 1em 0 4em;
+  width: 41%;
+  box-sizing: border-box;
 }
 
 section.cont-cursos article.curso-panaderia .panadria-txt h2 {
-  font-size: 1.5em;
+  font-size: 2em;
   margin-bottom: 0;
 }
 
@@ -1192,40 +1265,73 @@ section.cont-cursos article.curso-panaderia .panadria-txt strong {
   font-weight: 400;
   margin-bottom: 4em;
   display: block;
+  font-style: italic;
 }
 
 section.cont-cursos article.curso-panaderia .panadria-txt h4 {
   color: #333333;
   margin-bottom: 0;
+  font-size: 1em;
 }
 
 section.cont-cursos article.curso-panaderia .panadria-txt p {
   margin: 0;
+  line-height: 1.3em;
 }
 
-section.cont-cursos article.curso-panaderia figure.panadria-galeria {
-  width: 60%;
+section.cont-cursos article.curso-panaderia section.cursos-galeria {
+  width: 59%;
   margin: 1.2em 0 0;
   display: block;
+  margin: 0;
+  padding: 0;
   position: relative;
 }
 
-section.cont-cursos article.curso-panaderia figure.panadria-galeria .curso-img {
-  display: inline-block;
-  padding-top: 400px;
-}
-
-section.cont-cursos article.curso-panaderia figure.panadria-galeria .curso-img.grande {
-  top: 0;
-  left: 0;
-  position: absolute;
+section.cont-cursos article.curso-panaderia section.cursos-galeria ul {
   width: 100%;
-  height: 400px;
-  padding-top: 0;
-  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-section.cont-cursos article.curso-panaderia figure.panadria-galeria .curso-img.grande img {
+section.cont-cursos article.curso-panaderia section.cursos-galeria .imagenesGrandes li {
+  width: 100%;
+}
+
+section.cont-cursos article.curso-panaderia section.cursos-galeria .imagenesGrandes li img {
+  width: 100%;
+}
+
+section.cont-cursos article.curso-panaderia section.cursos-galeria .imagenesPeques {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0.3em;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+}
+
+section.cont-cursos article.curso-panaderia section.cursos-galeria .imagenesPeques li {
+  margin: 0.3em;
+}
+
+section.cont-cursos article.curso-panaderia section.cursos-galeria .imagenesPeques li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+section.cont-cursos article.curso-panaderia section.cursos-galeria .imagenesPeques li img {
   width: 100%;
 }
 
@@ -1238,12 +1344,12 @@ section.cont-cursos article.curso-panaderia .action strong {
   font-weight: 400;
   color: #B72A24;
   display: block;
+  font-style: italic;
 }
 
 section.cont-cursos article.curso-panaderia .action a.boton {
   padding: 0.5em 3em;
   border-radius: 0.3em;
-  background: -webkit-linear-gradient(#ff1c24, #aa0000);
   background: linear-gradient(#ff1c24, #aa0000);
   color: #fff;
   margin: 1em 0;
@@ -1252,7 +1358,6 @@ section.cont-cursos article.curso-panaderia .action a.boton {
 }
 
 section.cont-cursos article.curso-panaderia .action a.boton:hover {
-  background: -webkit-linear-gradient(#e80008, #770000);
   background: linear-gradient(#e80008, #770000);
 }
 
@@ -1269,6 +1374,7 @@ footer.footer .footer-txt {
 
 footer.footer .footer-txt p {
   margin: 0;
+  font-weight: 600;
 }
 
 footer.footer aside.social {
@@ -1292,22 +1398,40 @@ footer.footer aside.social a .fa {
   border: 1px solid;
 }
 
-footer.footer aside.social a .fa-facebook {
+footer.footer aside.social a .icon-facebook {
   border-color: #44619D;
   color: #44619D;
 }
 
-footer.footer aside.social a .fa-email {
+footer.footer aside.social a .icon-facebook:hover {
+  color: #fff;
+  background-color: #44619D;
+}
+
+footer.footer aside.social a .icon-mail {
   border-color: green;
   color: green;
 }
 
+footer.footer aside.social a .icon-mail:hover {
+  color: #fff;
+  background-color: green;
+}
+
 body {
-  background: #EDE9DE;
+  background: #fff;
   font-size: 16px;
   line-height: 1.6em;
   font-family: "Merriweather", serif;
   color: #333333;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
+}
+
+body .wrapper {
+  box-shadow: 0 0 0.8em #999;
+  background-color: #EDE9DE;
+  max-width: 1024px;
+  margin: 0 auto;
+  overflow: hidden;
 }

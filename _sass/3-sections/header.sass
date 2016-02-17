@@ -2,11 +2,13 @@ header.header
 	nav
 		position: relative
 		background: url(../img/bg-madera.jpg) 0 0 repeat
+		background-size: 50% 4em
 		margin: auto
 		min-height: 3em
-		padding-top: 3.75em
+		padding-top: 4em
 		width: 100%
 		z-index: 9999
+		color: #FFF
 
 		ul.header-nav
 			@include display(flex)
@@ -14,13 +16,14 @@ header.header
 			@include align-items(center)
 			background-color: $primary-color
 			color: $terciary-color
-			height: 3em
+			height: 2.5em
 			list-style: none
 			margin: 0
 			padding: 0 0.5em
 			
 
 			li.header-navLink
+				position: relative
 				a
 					padding: 0 1.5em
 					border-left: 1px solid #fff
@@ -29,8 +32,31 @@ header.header
 						color: lighten($primary-color,40)
 				&:first-child a
 					border: none
-				&:nth-child(6) a
+				&:nth-child(4) a
 					border: none
+				&:nth-child(5) a
+					border: none
+				>ul 
+					position: absolute
+					top: 100%
+					background-color: transparentize($primary-color,0.25)
+					list-style: none
+					margin: 0
+					padding: 0
+					display: none
+					>li 
+						margin: 0
+						a
+							border: none
+							line-height: 3em
+							display: block
+							&:hover
+								color: #fff
+								background-color: transparentize($primary-color,0.25)
+				&:hover >ul
+					display: block
+
+
 				&.logo
 					position: relative
 					bottom: 0.5em
@@ -38,6 +64,7 @@ header.header
 					background-color: #fff
 					padding: 1.5em 0.5em
 					border-radius: 0 0 3em 3em
+					box-shadow: 0 0.6em 1.4em -0.2em #000
 					a 
 						padding: 0
 					img 
